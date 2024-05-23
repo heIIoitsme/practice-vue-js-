@@ -11,9 +11,7 @@ const count = ref(0);
 
 
 <template>
-  <div class="button">
-    <button @click="getItems"></button>
-  </div>
+    <button class="button" @click="getItems"></button>
 </template>
 
 
@@ -21,9 +19,8 @@ const count = ref(0);
 <style>
 
 .button {
-    display: flex;
-    height: 10vh;
-    width: 10vh;
+    height: 20px;
+    width: 50px;
 }
 
 </style>

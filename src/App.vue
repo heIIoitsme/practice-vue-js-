@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import Button from "./components/Button.vue";
+import ProductList from "@/components/ProductList.vue";
+import {ref} from "vue";
+import {getItems} from "@/api/product";
+
+const Prod = ref();
+async function onClick() {
+  Prod.value = await getItems();
+}
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-        <Button />
+      <Button @click="onClick()"/>
+      <ProductList :product-items="Prod" />
     </div>
   </header>
 </template>
